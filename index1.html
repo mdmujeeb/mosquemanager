@@ -926,7 +926,7 @@ table.MsoTableGrid
 
 	function getHijriDate() {
 
-		$.get('getHijriDate',
+		$.get('https://mosquemanagerf.azurewebsites.net/api/getHijriDate',
 				{
 					id: masjidId
 				},
@@ -987,7 +987,7 @@ table.MsoTableGrid
 	}
 
 	function getCurrentTempreature() {
-			$.get('getCurrentTempreature',
+			$.get('https://mosquemanagerf.azurewebsites.net/api/getCurrentTempreature',
 					{
 						id: masjidId
 					},
