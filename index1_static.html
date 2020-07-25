@@ -963,13 +963,12 @@ table.MsoTableGrid
 
 						audioPlayType = data["AUDIO_PLAY_TYPE"];
 
+						var body = '{ "refreshRequired" : "false", "userId" : ' + masjidId + '}';
+
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
 							$.post('https://mosquemanager.azurewebsites.net/api/updateRefreshRequired'
-									, '{
-										"refreshRequired" : "false",
-										"userId" : ' + masjidId +
-									'}',
+									, body ,
 									function(data, status){
 										location.reload();
 							});
