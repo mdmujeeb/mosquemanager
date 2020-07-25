@@ -966,10 +966,10 @@ table.MsoTableGrid
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
 							$.post('https://mosquemanager.azurewebsites.net/api/updateRefreshRequired'
-									, {
-										refreshRequired: 'false',
-										userId: masjidId
-									},
+									, '{
+										"refreshRequired" : "false",
+										"userId" : ' + masjidId +
+									'}',
 									function(data, status){
 										location.reload();
 							});
