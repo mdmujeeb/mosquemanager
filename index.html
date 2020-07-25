@@ -965,7 +965,7 @@ table.MsoTableGrid
 
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
-							$.post('updateRefreshRequired'
+							$.post('https://mosquemanager.azurewebsites.net/api/updateRefreshRequired'
 									, {
 										refreshRequired: 'false',
 										id: masjidId
