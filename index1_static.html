@@ -864,9 +864,26 @@ table.MsoTableGrid
 			if(isEnable == true) {
 
 				$("#mainTable").css('display', 'none');
+
+				$.get("https://localhost/monitor.php", {
+						pin: '2',
+						state: '0'
+					},
+					function(data, status){
+						//console.log(data);
+				});
+
 			} else {
 
 				$("#mainTable").css('display', 'block');
+
+				$.get("https://localhost/monitor.php", {
+						pin: '2',
+						state: '1'
+					},
+					function(data, status){
+						//console.log(data);
+				});
 			}
 		}
 	}
