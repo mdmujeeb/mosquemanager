@@ -689,6 +689,7 @@ table.MsoTableGrid
 	var screenSaverEndTime = [4,25];
 	var isRefreshes = 'null';
 	var isRespectsScreenSaver = 'null';
+	var isRemoteDataRequired = true;
 
 	resizeComponents();
 	setInterval(getCurrentTime, 1000);
@@ -861,6 +862,10 @@ table.MsoTableGrid
 	function enableScreenSaver(isEnable) {
 
 		if(isRespectsScreenSaver == 'null') {
+
+			// When Screen saver is enabled, remote data is not required
+			isRemoteDataRequired = !isEnable;
+
 			if(isEnable == true) {
 
 				$("#mainTable").css('display', 'none');
@@ -943,6 +948,11 @@ table.MsoTableGrid
 
 	function getHijriDate() {
 
+		// If remote data is not required, return from here
+		if(!isRemoteDataRequired) {
+			return;
+		}
+
 		$.get('https://mosquemanager.azurewebsites.net/api/getHijriDate',
 				{
 					id: masjidId
@@ -962,6 +972,12 @@ table.MsoTableGrid
 	}
 
 	function getNamazTimes() {
+
+		// If remote data is not required, return from here
+		if(!isRemoteDataRequired) {
+			return;
+		}
+
 		$.get('https://mosquemanager.azurewebsites.net/api/getNamazTimes',
 					{
 						id: masjidId
@@ -1003,6 +1019,12 @@ table.MsoTableGrid
 	}
 
 	function getCurrentTempreature() {
+
+			// If remote data is not required, return from here
+			if(!isRemoteDataRequired) {
+				return;
+			}
+
 			$.get('https://mosquemanager.azurewebsites.net/api/getCurrentTempreature',
 					{
 						id: masjidId
