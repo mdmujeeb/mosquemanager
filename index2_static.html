@@ -943,7 +943,7 @@ table.MsoTableGrid
 
 	function getHijriDate() {
 
-		$.get('https://mosquemanager.azurewebsites.net/api/getHijriDate',
+		$.get('https://mosquemanager.azurewebsites.net/getHijriDate',
 				{
 					id: masjidId
 				},
@@ -962,7 +962,7 @@ table.MsoTableGrid
 	}
 
 	function getNamazTimes() {
-		$.get('https://mosquemanager.azurewebsites.net/api/getNamazTimes',
+		$.get('https://mosquemanager.azurewebsites.net/getNamazTimes',
 					{
 						id: masjidId
 					},
@@ -984,7 +984,7 @@ table.MsoTableGrid
 
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
-							$.post('https://mosquemanager.azurewebsites.net/api/updateRefreshRequired'
+							$.post('https://mosquemanager.azurewebsites.net/updateRefreshRequired'
 									, body ,
 									function(data, status){
 										location.reload();
@@ -1003,7 +1003,7 @@ table.MsoTableGrid
 	}
 
 	function getCurrentTempreature() {
-			$.get('https://mosquemanager.azurewebsites.net/api/getCurrentTempreature',
+			$.get('https://mosquemanager.azurewebsites.net/getCurrentTempreature',
 					{
 						id: masjidId
 					},
