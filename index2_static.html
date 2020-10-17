@@ -980,22 +980,14 @@ table.MsoTableGrid
 
 						audioPlayType = data["AUDIO_PLAY_TYPE"];
 
-						var body = '{ "name": "REFRESH_REQUIRED", "time" : "false", "userId" : ' + masjidId + ', "password": "einstein"}';
-
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
-							$.ajaxSetup({
-							    headers: {
-							        'Content-Type': 'application/json',
-							        'Accept': 'application/json'
-							    }
-							});
-
-							$.post('https://mosquemanager.azurewebsites.net/updateRefreshRequired'
-									, body ,
-									function(data, status){
-										location.reload();
-							});
+							$.get('https://mosquemanager.azurewebsites.net/resetUpdateRefreshRequired',
+										{
+											id: masjidId
+										},
+										function(data, status){
+										});
 						}
 
 						isScreenSaverEnabled = data["SCREEN_SVR_ENABLED"];
