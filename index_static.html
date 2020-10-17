@@ -980,7 +980,7 @@ table.MsoTableGrid
 
 						audioPlayType = data["AUDIO_PLAY_TYPE"];
 
-						var body = '{ "refreshRequired" : "false", "userId" : ' + masjidId + '}';
+						var body = '{ "name": "REFRESH_REQUIRED", "time" : "false", "userId" : ' + masjidId + ', "password": "Mummy@123"}';
 
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
