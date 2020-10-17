@@ -988,6 +988,13 @@ table.MsoTableGrid
 
 						if(data["REFRESH_REQUIRED"] == 'true' && isRefreshes == 'null') {
 
+							$.ajaxSetup({
+							    headers: {
+							        'Content-Type': 'application/json',
+							        'Accept': 'application/json'
+							    }
+							});
+
 							$.post('https://mosquemanager.azurewebsites.net/updateRefreshRequired'
 									, body ,
 									function(data, status){
