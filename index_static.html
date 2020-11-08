@@ -750,16 +750,12 @@ table.MsoTableGrid
 		var screenSaverEndTime = [4, 25];
 		var isRefreshes = 'false';
 		var isRespectsScreenSaver = 'false';
-		var isShouldKeepRefreshing = false;
 
 		resizeComponents();
 		setInterval(getCurrentTime, 1000);
 		setInterval(getCurrentTempreature, 3600000);
-                setInterval(getHijriDate, 86400000);
-
-		if (isShouldKeepRefreshing) {
-		      setInterval(getNamazTimes, 15000);
-		}
+		setInterval(getHijriDate, 3600000);
+		setInterval(getNamazTimes, 3600000);
 
 		getHijriDate();
 		getNamazTimes();
