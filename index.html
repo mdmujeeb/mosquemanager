@@ -754,11 +754,11 @@ table.MsoTableGrid
 
 		resizeComponents();
 		setInterval(getCurrentTime, 1000);
+                setInterval(getCurrentTempreature, 3600000);
+                setInterval(getHijriDate, 86400000);
 
 		if (isShouldKeepRefreshing) {
-			setInterval(getNamazTimes, 15000);
-			setInterval(getHijriDate, 15000);
-			setInterval(getCurrentTempreature, 900000);
+		      setInterval(getNamazTimes, 15000);
 		}
 
 		getHijriDate();
