@@ -926,7 +926,7 @@ table.MsoTableGrid
 
 					$("#mainTable").css('display', 'none');
 
-					$.get("https://localhost/monitor.php", {
+					$.get("https://127.0.0.1/monitor.php", {
 						pin: '2',
 						state: '0'
 					},
@@ -938,7 +938,7 @@ table.MsoTableGrid
 
 					$("#mainTable").css('display', 'block');
 
-					$.get("https://localhost/monitor.php", {
+					$.get("https://127.0.0.1/monitor.php", {
 						pin: '2',
 						state: '1'
 					},
@@ -982,7 +982,7 @@ table.MsoTableGrid
 			for (i = 0; i < count; i++) {
 
 				setTimeout(function () {
-					$.get("https://localhost/audio.php", {
+					$.get("https://127.0.0.1/audio.php", {
 						type: 'audio',
 						duration: 1
 					},
